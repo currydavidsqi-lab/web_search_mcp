@@ -1,0 +1,14 @@
+{
+  "search": {
+    "maxResults": 5,
+    "timeout": 10000,
+    "retryAttempts": 1
+  },
+  "duckduckgo": {
+    "baseUrl": "https://duckduckgo.com"
+  },
+  "logging": {
+    "level": "error",
+    "format": "simple"
+  }
+}

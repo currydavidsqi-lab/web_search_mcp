@@ -1,0 +1,19 @@
+{
+  "logging": {
+    "level": "info",
+    "format": "json",
+    "colorize": false,
+    "sanitize": true,
+    "hideStackTraces": true,
+    "hideFilePaths": true
+  },
+  "search": {
+    "timeout": 30000
+  },
+  "security": {
+    "sanitizeLogs": true,
+    "hideStackTraces": true,
+    "hideFilePaths": true,
+    "showFullErrors": false
+  }
+}

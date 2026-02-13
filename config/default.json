@@ -1,0 +1,26 @@
+{
+  "server": {
+    "name": "web-search-mcp-server",
+    "version": "1.0.0"
+  },
+  "search": {
+    "maxResults": 10,
+    "timeout": 30000,
+    "retryAttempts": 3,
+    "retryDelay": 1000
+  },
+  "duckduckgo": {
+    "baseUrl": "https://duckduckgo.com",
+    "htmlPath": "/html/",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  "http": {
+    "timeout": 30000,
+    "maxRedirects": 5
+  },
+  "logging": {
+    "level": "info",
+    "format": "json",
+    "colorize": false
+  }
+}

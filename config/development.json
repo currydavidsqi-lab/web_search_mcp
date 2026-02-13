@@ -1,0 +1,10 @@
+{
+  "logging": {
+    "level": "debug",
+    "format": "simple",
+    "colorize": true
+  },
+  "search": {
+    "timeout": 60000
+  }
+}
