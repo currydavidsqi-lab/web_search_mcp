@@ -80,7 +80,7 @@ function sanitizeMetaInfo(metaStr: string): string {
   try {
     const meta = JSON.parse(metaStr);
     // 递归清理所有字符串值
-    return JSON.stringify(meta, (key, value) => {
+    return JSON.stringify(meta, (_key, value) => {
       if (typeof value === 'string') {
         return sanitizeSensitiveInfo(value);
       }

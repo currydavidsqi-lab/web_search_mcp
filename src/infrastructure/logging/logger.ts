@@ -1,6 +1,6 @@
 import winston from 'winston';
 import type { LoggingConfig } from '../../types/config.js';
-import { simpleFormatter, colorizeFormatter } from './formatters.js';
+import { simpleFormatter, colorizeFormatter, errorFormatter } from './formatters.js';
 
 /**
  * Logger class
@@ -27,15 +27,28 @@ export class Logger {
       : undefined;
 
     // Console transport
-    const format = config.format === 'json'
-      ? winston.format.json()
-      : winston.format.combine(
-          config.colorize
-            ? winston.format.colorize()
-            : winston.format.uncolorize(),
-          winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-          winston.format.printf(config.colorize ? colorizeFormatter() : simpleFormatter())
-        );
+    if (config.format === 'json') {
+      transports.push(
+        new winston.transports.Console({
+          format: winston.format.combine(
+            winston.format.timestamp(),
+            winston.format.json()
+          ),
+        })
+      );
+    } else {
+      transports.push(
+        new winston.transports.Console({
+          format: winston.format.combine(
+            config.colorize
+              ? winston.format.colorize()
+              : winston.format.uncolorize(),
+            winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+            winston.format.printf(config.colorize ? colorizeFormatter() : simpleFormatter())
+          ),
+        })
+      );
+    }
 
     // File transport (only in production)
     if (process.env.NODE_ENV === 'production') {
@@ -57,9 +70,6 @@ export class Logger {
         })
       );
     }
-
-    // 导入带安全选项的格式化器
-    const { errorFormatter } = require('./formatters.js');
 
     this.logger = winston.createLogger({
       level: config.level,
