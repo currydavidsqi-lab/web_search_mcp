@@ -249,7 +249,7 @@ npm run test:watch
   "mcpServers": {
     "web-search": {
       "command": "node",
-      "args": ["D:\\03_Code\\AI\\mcp_server\\web_search\\build\\main.js"],
+      "args": ["<项目根目录>/build/main.js"],
       "env": {
         "HTTPS_PROXY": "http://127.0.0.1:7897",
         "HTTP_PROXY": "http://127.0.0.1:7897"
@@ -258,6 +258,8 @@ npm run test:watch
   }
 }
 ```
+
+> **说明**：将 `<项目根目录>` 替换为您的实际项目路径（例如：`C:/Users/YourName/projects/web_search_mcp`）
 
 ## 技术栈
 

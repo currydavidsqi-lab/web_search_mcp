@@ -1,5 +1,10 @@
 # Web 搜索 MCP 服务器 - 快速开始指南
 
+> **注意**：本指南中的 `<项目根目录>` 需要替换为您的实际项目路径。例如：
+> - Windows: `C:/Users/YourName/projects/web_search_mcp`
+> - macOS/Linux: `~/projects/web_search_mcp`
+> - 或您克隆项目的任何位置
+
 ## ✅ 准备工作完成
 
 以下检查和准备工作已全部完成：
@@ -16,8 +21,12 @@
 ### 1. 清理项目
 
 确保构建目录干净：
+
 ```bash
-cd D:\03_Code\AI\mcp_server\web_search
+# 进入项目目录（请替换为您的实际路径）
+cd <项目根目录>
+
+# 清理构建目录
 rm -rf build/
 ```
 
@@ -25,7 +34,7 @@ rm -rf build/
 
 **确认项目文件存在**：
 ```bash
-cd D:\03_Code\AI\mcp_server\web_search
+cd <项目根目录>
 ls -la src/
 ```
 
@@ -38,11 +47,17 @@ npm run build
 - ✅ 无编译错误
 - ✅ 生成的 build/ 目录包含所有文件
 
+**如果使用 Windows 命令提示符**：
+```cmd
+cd <项目根目录>
+npm run build
+```
+
 ### 3. 验证 .gitignore 状态
 
 **确认关键文件存在**：
 ```bash
-cd D:\03_Code\AI\mcp_server\web_search
+# 在项目根目录下执行
 cat .gitignore
 ```
 
@@ -100,13 +115,13 @@ https://github.com/currydavidsqi-lab/web_search_mcp-server.git
 **上传命令**：
 ```bash
 # 进入项目目录
-cd D:\03_Code\AI\mcp_server\web_search
+cd <项目根目录>
 
 # 添加远程仓库（如果需要）
 git remote add origin https://github.com/currydavidsqi-lab/web_search_mcp-server.git
 
 # 推送到 GitHub
-git push -u currydavidsqi-lab main
+git push -u origin main
 ```
 
 ---
